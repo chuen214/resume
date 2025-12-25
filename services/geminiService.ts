@@ -5,9 +5,8 @@ import { SYSTEM_INSTRUCTION } from "../constants";
 // Use import.meta.env for Vite, fallback to process.env for compatibility
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.GEMINI_API_KEY || process.env.API_KEY || process.env.GEMINI_API_KEY;
 
-if (!apiKey) {
-  console.warn("GEMINI_API_KEY is not set. Chat functionality will not work.");
-}
+// Check if API key is available (silently, no console warnings)
+export const isApiKeyAvailable = !!apiKey;
 
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 

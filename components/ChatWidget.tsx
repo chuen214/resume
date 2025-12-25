@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
-import { sendMessageToGemini } from '../services/geminiService';
+import { sendMessageToGemini, isApiKeyAvailable } from '../services/geminiService';
 import { ChatMessage } from '../types';
 import ReactMarkdown from 'react-markdown';
 import { GenerateContentResponse } from '@google/genai';
@@ -16,7 +16,16 @@ const ChatWidget: React.FC = () => {
 
   // Reset chat and greeting when language changes
   useEffect(() => {
-    setMessages([{ role: 'model', text: content.ui.chat.greeting }]);
+    if (isApiKeyAvailable) {
+      setMessages([{ role: 'model', text: content.ui.chat.greeting }]);
+    } else {
+      setMessages([{ 
+        role: 'model', 
+        text: language === 'zh' 
+          ? '聊天功能目前未啟用。如需啟用，請聯繫網站管理員。' 
+          : 'Chat functionality is currently disabled. Please contact the site administrator to enable it.' 
+      }]);
+    }
   }, [language, content.ui.chat.greeting]);
 
   const scrollToBottom = () => {
@@ -29,7 +38,7 @@ const ChatWidget: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || isLoading) return;
+    if (!input.trim() || isLoading || !isApiKeyAvailable) return;
 
     const userText = input.trim();
     setInput('');
@@ -121,13 +130,13 @@ const ChatWidget: React.FC = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={content.ui.chat.placeholder}
+              placeholder={isApiKeyAvailable ? content.ui.chat.placeholder : (language === 'zh' ? '聊天功能未啟用' : 'Chat disabled')}
               className="flex-1 bg-slate-800 text-white placeholder-slate-400 border border-slate-700 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
-              disabled={isLoading}
+              disabled={isLoading || !isApiKeyAvailable}
             />
             <button 
               type="submit" 
-              disabled={isLoading || !input.trim()}
+              disabled={isLoading || !input.trim() || !isApiKeyAvailable}
               className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white p-2 rounded-xl transition-colors"
             >
               <Send className="w-5 h-5" />

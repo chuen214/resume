@@ -47,12 +47,14 @@ const Skills: React.FC = () => {
                 </div>
             </div>
 
-            <div className="md:w-2/3 w-full h-[400px] bg-slate-900/50 rounded-3xl border border-slate-800 p-6 md:p-10">
-                <ResponsiveContainer width="100%" height="100%">
+            <div className="md:w-2/3 w-full h-[400px] bg-slate-900/50 rounded-3xl border border-slate-800 p-6 md:p-10 min-h-[400px]">
+                <ResponsiveContainer width="100%" height="100%" minHeight={400}>
                     <BarChart
                         data={sortedSkills}
                         layout="vertical"
                         margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
+                        width={500}
+                        height={400}
                     >
                         <XAxis type="number" hide domain={[0, 100]} />
                         <YAxis 

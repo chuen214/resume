@@ -3,7 +3,7 @@ import { Education, Experience, Project, Skill } from './types';
 // Raw Data Definitions
 
 const PROFILE_EN = {
-  name: "Mechanical Engineering Student",
+  name: "Ng Pin Chuen 黃品銓",
   university: "National Taiwan University",
   tagline: "Bridging Mechanical Systems with Artificial Intelligence",
   about: `I am a Mechanical Engineering student at National Taiwan University (expected June 2026) with a cumulative GPA of 3.91 (Top 18%). Originally from Malaysia, I am fluent in Chinese, English, and Malay. My academic journey has evolved from traditional mechanical optimization to integrating advanced AI solutions, including Neural Networks and Bayesian methods, to solve complex engineering problems.`,
@@ -18,8 +18,8 @@ const PROFILE_EN = {
 };
 
 const PROFILE_ZH = {
-  name: "Mechanical Engineering Student",
-  university: "National Taiwan University",
+  name: "Ng Pin Chuen 黃品銓",
+  university: "國立臺灣大學",
   tagline: "Bridging Mechanical Systems with Artificial Intelligence",
   about: `我來自馬來西亞，精通中文、英文和馬來文。2022年來台就讀國立臺灣大學機械工程學系，預計於2026年6月取得學士學位。目前累積GPA為3.91，排名系上主要前18%。我的學術歷程從傳統的機械優化，轉變為整合神經網絡與貝式方法等先進AI解決方案，致力於解決複雜的工程問題。`,
   location: "Taipei, Taiwan",
@@ -274,8 +274,8 @@ const UI_EN = {
     error: "Sorry, I encountered an error. Please try again later."
   },
   footer: {
-    rights: "NTU Mechanical Engineering Student. All rights reserved.",
-    powered: "Powered by React, Tailwind & Gemini AI"
+    rights: "Ng Pin Chuen 黃品銓. All rights reserved.",
+    powered: ""
   }
 };
 
@@ -308,8 +308,8 @@ const UI_ZH = {
     error: "抱歉，發生錯誤，請稍後再試。"
   },
   footer: {
-    rights: "國立臺灣大學機械工程學系學生。保留所有權利。",
-    powered: "由 React, Tailwind 與 Gemini AI 驅動"
+    rights: "Ng Pin Chuen 黃品銓。保留所有權利。",
+    powered: ""
   }
 };
 

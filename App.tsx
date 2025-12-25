@@ -24,7 +24,9 @@ const MainContent: React.FC = () => {
       
       <footer className="bg-slate-950 border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
         <p>© {new Date().getFullYear()} {content.ui.footer.rights}</p>
-        <p className="mt-2 text-xs">{content.ui.footer.powered}</p>
+        {content.ui.footer.powered && (
+          <p className="mt-2 text-xs">{content.ui.footer.powered}</p>
+        )}
       </footer>
 
       <ChatWidget />

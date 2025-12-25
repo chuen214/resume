@@ -136,7 +136,7 @@ const PROJECTS_EN: Project[] = [
     description: "Implemented a Bayesian Neural Network to predict injection times. The model quantifies uncertainty based on drug viscosity, volume, and mechanical spring properties, aiding in risk assessment.",
     techStack: ["Python", "Bayesian NN", "Mechanical Analysis"],
     category: "AI",
-    link: "https://example.com/bnn-injector", // Please replace with actual link
+    link: "https://injight.streamlit.app/",
     linkType: "website"
   },
   {
@@ -187,7 +187,7 @@ const PROJECTS_ZH: Project[] = [
     description: "實作貝式神經網絡 (BNN) 以預測注射時間。該模型可根據藥物黏度、體積及機械彈簧特性量化預測的不確定性，協助進行風險評估。",
     techStack: ["Python", "Bayesian NN", "Mechanical Analysis"],
     category: "AI",
-    link: "https://example.com/bnn-injector", // Please replace with actual link
+    link: "https://injight.streamlit.app/",
     linkType: "website"
   },
   {

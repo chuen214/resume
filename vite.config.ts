@@ -3,16 +3,23 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
+    // Load environment variables - Vite automatically exposes VITE_* variables
+    // But we also want to support GEMINI_API_KEY for Vercel compatibility
     const env = loadEnv(mode, '.', '');
+    const apiKey = env.VITE_GEMINI_API_KEY || env.GEMINI_API_KEY;
+    
     return {
       server: {
         port: 3000,
         host: '0.0.0.0',
       },
       plugins: [react()],
+      // Expose environment variables to client code
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        'process.env.API_KEY': JSON.stringify(apiKey),
+        'process.env.GEMINI_API_KEY': JSON.stringify(apiKey),
+        'import.meta.env.VITE_GEMINI_API_KEY': JSON.stringify(apiKey),
+        'import.meta.env.GEMINI_API_KEY': JSON.stringify(apiKey),
       },
       resolve: {
         alias: {

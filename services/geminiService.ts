@@ -2,12 +2,23 @@ import { GoogleGenAI } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from "../constants";
 
 // Initialize the API client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Use import.meta.env for Vite, fallback to process.env for compatibility
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.GEMINI_API_KEY || process.env.API_KEY || process.env.GEMINI_API_KEY;
+
+if (!apiKey) {
+  console.warn("GEMINI_API_KEY is not set. Chat functionality will not work.");
+}
+
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export const sendMessageToGemini = async (
   message: string,
   history: { role: 'user' | 'model'; parts: { text: string }[] }[]
 ) => {
+  if (!ai) {
+    throw new Error("API Key is not configured. Please set GEMINI_API_KEY environment variable.");
+  }
+
   try {
     const model = 'gemini-3-flash-preview';
     

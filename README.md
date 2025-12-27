@@ -1,20 +1,44 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Portfolio - Ng Pin Chuen 黃品銓
 
-# Run and deploy your AI Studio app
+個人作品集網站 | Personal Portfolio Website
 
-This contains everything you need to run your app locally.
+## 🌐 Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Do07SxEthq3Qgz-buWItrk1lrscLjAO8
+**GitHub Pages:** https://chuen214.github.io/resume/
 
-## Run Locally
+## 📋 About
 
-**Prerequisites:**  Node.js
+This is a personal portfolio website showcasing my background, skills, projects, and experience as a Mechanical Engineering student at National Taiwan University.
 
+## 🚀 Run Locally
+
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+   ```bash
+   npm install
+   ```
+
+2. (Optional) Set the `GEMINI_API_KEY` in `.env.local` for chat functionality:
+   ```
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
 3. Run the app:
-   `npm run dev`
+   ```bash
+   npm run dev
+   ```
+
+4. Open http://localhost:3000 in your browser
+
+## 🛠️ Built With
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Recharts
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details

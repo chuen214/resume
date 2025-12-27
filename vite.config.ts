@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => {
     const apiKey = env.VITE_GEMINI_API_KEY || env.GEMINI_API_KEY;
     
     return {
+      // Base path for GitHub Pages: /<repository-name>/
+      // Change 'resume' to your actual repository name
+      base: '/resume/',
       server: {
         port: 3000,
         host: '0.0.0.0',

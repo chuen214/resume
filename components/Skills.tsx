@@ -47,12 +47,12 @@ const Skills: React.FC = () => {
                 </div>
             </div>
 
-            <div className="md:w-2/3 w-full h-[400px] bg-slate-900/50 rounded-3xl border border-slate-800 p-6 md:p-10 min-h-[400px]">
+            <div className="md:w-2/3 w-full h-[400px] bg-slate-900/50 rounded-3xl border border-slate-800 p-4 md:p-6 min-h-[400px]">
                 <ResponsiveContainer width="100%" height="100%" minHeight={400}>
                     <BarChart
                         data={sortedSkills}
                         layout="vertical"
-                        margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
+                        margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
                         width={500}
                         height={400}
                     >
@@ -60,10 +60,11 @@ const Skills: React.FC = () => {
                         <YAxis 
                             dataKey="name" 
                             type="category" 
-                            width={120} 
+                            width={150}
                             tick={{ fill: '#94a3b8', fontSize: 12 }} 
                             axisLine={false}
                             tickLine={false}
+                            interval={0}
                         />
                         <Tooltip content={<CustomTooltip />} cursor={{fill: 'rgba(255,255,255,0.05)'}} />
                         <Bar dataKey="level" radius={[0, 4, 4, 0]} barSize={20}>

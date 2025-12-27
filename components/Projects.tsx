@@ -66,8 +66,8 @@ const Projects: React.FC = () => {
 
                             {project.link && (
                                 <a 
-                                    href={project.link}
-                                    target="_blank"
+                                    href={project.link.startsWith('http') ? project.link : `${import.meta.env.BASE_URL}${project.link.replace(/^\//, '')}`}
+                                    target={project.link.startsWith('http') ? '_blank' : '_self'}
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl transition-colors w-fit group-hover/btn:translate-x-1"
                                 >

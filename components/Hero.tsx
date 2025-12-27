@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
 
           <div className="flex gap-4">
             <a 
-              href="/Resume.pdf" 
+              href={`${import.meta.env.BASE_URL}Resume.pdf`}
               target="_blank" 
               rel="noopener noreferrer"
               className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-medium transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2"

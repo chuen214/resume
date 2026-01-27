@@ -7,6 +7,7 @@ export interface Project {
   category: 'Engineering' | 'Software' | 'AI';
   link?: string;
   linkType?: 'website' | 'video';
+  certificateLink?: string; // Link to certificate/award document
 }
 
 export interface Experience {
@@ -15,6 +16,7 @@ export interface Experience {
   period: string;
   location: string;
   description: string[];
+  certificateLink?: string; // Link to certificate/document
 }
 
 export interface Education {

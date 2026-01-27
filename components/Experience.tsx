@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, FileText } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Experience: React.FC = () => {
@@ -48,6 +48,19 @@ const Experience: React.FC = () => {
                         </li>
                     ))}
                 </ul>
+                {exp.certificateLink && (
+                    <div className="mt-4 pt-4 border-t border-slate-800">
+                        <a 
+                            href={`${import.meta.env.BASE_URL}${exp.certificateLink.replace(/^\//, '')}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+                        >
+                            <FileText className="w-4 h-4" />
+                            View Certificate
+                        </a>
+                    </div>
+                )}
               </div>
             </div>
           ))}

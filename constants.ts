@@ -94,7 +94,8 @@ const EXPERIENCE_ZH: Experience[] = [
     description: [
       "負責前端開發：使用 R 開發 Gage R&R 分析程式以取代 Minitab，功能涵蓋資料輸入、介面佈局、結果視覺化及 PDF 報告生成。",
       "專案開發：利用貝式神經網絡 (BNN) 預測自動注射器的注射時間，根據藥物體積、黏度及彈簧勁度等參數，量化預測的不確定性。"
-    ]
+    ],
+    certificateLink: "/intern.pdf"
   },
   {
     company: "蕭浩明教授實驗室",
@@ -155,7 +156,8 @@ const PROJECTS_EN: Project[] = [
     period: "Senior Year",
     description: "Awarded 3rd Place in the 2025 International Generative AI Innovative Application Competition. Developed a chatbot to detect and prevent fraud within the LINE messaging platform.",
     techStack: ["GenAI", "Chatbot", "Python"],
-    category: "AI"
+    category: "AI",
+    certificateLink: "/GAI.pdf"
   },
   {
     title: "Wind-Powered Vehicle",
@@ -206,7 +208,8 @@ const PROJECTS_ZH: Project[] = [
     period: "大四",
     description: "參與 AI Club 專案團隊，於「2025 生成式 AI 創新應用競賽」獲得第三名。開發用於偵測與預防詐騙訊息的 LINE 聊天機器人。",
     techStack: ["GenAI", "Chatbot", "Python"],
-    category: "AI"
+    category: "AI",
+    certificateLink: "/GAI.pdf"
   },
   {
     title: "風力驅動車",

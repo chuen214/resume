@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Cpu, Code2, Bot, PlayCircle, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Cpu, Code2, Bot, PlayCircle, ExternalLink, Award } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Projects: React.FC = () => {
@@ -64,26 +64,39 @@ const Projects: React.FC = () => {
                                 ))}
                             </div>
 
-                            {project.link && (
-                                <a 
-                                    href={project.link.startsWith('http') ? project.link : `${import.meta.env.BASE_URL}${project.link.replace(/^\//, '')}`}
-                                    target={project.link.startsWith('http') ? '_blank' : '_self'}
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl transition-colors w-fit group-hover/btn:translate-x-1"
-                                >
-                                    {project.linkType === 'video' ? (
-                                        <>
-                                            <PlayCircle className="w-4 h-4" />
-                                            Watch Video
-                                        </>
-                                    ) : (
-                                        <>
-                                            <ExternalLink className="w-4 h-4" />
-                                            View Project
-                                        </>
-                                    )}
-                                </a>
-                            )}
+                            <div className="flex flex-wrap gap-2">
+                                {project.link && (
+                                    <a 
+                                        href={project.link.startsWith('http') ? project.link : `${import.meta.env.BASE_URL}${project.link.replace(/^\//, '')}`}
+                                        target={project.link.startsWith('http') ? '_blank' : '_self'}
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl transition-colors w-fit group-hover/btn:translate-x-1"
+                                    >
+                                        {project.linkType === 'video' ? (
+                                            <>
+                                                <PlayCircle className="w-4 h-4" />
+                                                Watch Video
+                                            </>
+                                        ) : (
+                                            <>
+                                                <ExternalLink className="w-4 h-4" />
+                                                View Project
+                                            </>
+                                        )}
+                                    </a>
+                                )}
+                                {project.certificateLink && (
+                                    <a 
+                                        href={`${import.meta.env.BASE_URL}${project.certificateLink.replace(/^\//, '')}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-xl transition-colors w-fit group-hover/btn:translate-x-1"
+                                    >
+                                        <Award className="w-4 h-4" />
+                                        Certificate
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

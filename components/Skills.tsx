@@ -25,9 +25,9 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-24 bg-slate-950">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex flex-col md:flex-row gap-8 items-stretch">
             
-            <div className="md:w-1/3">
+            <div className="md:w-1/3 flex flex-col justify-center">
                 <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
                     <span className="w-10 h-1 bg-indigo-500 rounded-full"></span>
                     {ui.headings.skills}
@@ -47,38 +47,38 @@ const Skills: React.FC = () => {
                 </div>
             </div>
 
-            <div className="md:w-2/3 w-full h-[400px] bg-slate-900/50 rounded-3xl border border-slate-800 p-4 md:p-6 min-h-[400px]">
-                <ResponsiveContainer width="100%" height="100%" minHeight={400}>
-                    <BarChart
-                        data={sortedSkills}
-                        layout="vertical"
-                        margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-                        width={500}
-                        height={400}
-                    >
-                        <XAxis type="number" hide domain={[0, 100]} />
-                        <YAxis 
-                            dataKey="name" 
-                            type="category" 
-                            width={150}
-                            tick={{ fill: '#94a3b8', fontSize: 12 }} 
-                            axisLine={false}
-                            tickLine={false}
-                            interval={0}
-                        />
-                        <Tooltip content={<CustomTooltip />} cursor={{fill: 'rgba(255,255,255,0.05)'}} />
-                        <Bar dataKey="level" radius={[0, 4, 4, 0]} barSize={20}>
-                            {sortedSkills.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={
-                                    (entry.category === 'Engineering' || entry.category.includes('Engineering')) ? '#3b82f6' : 
-                                    (entry.category === 'AI' || entry.category.includes('AI')) ? '#a855f7' :
-                                    (entry.category === 'Software' || entry.category.includes('Software')) ? '#10b981' :
-                                    '#f59e0b'
-                                } />
-                            ))}
-                        </Bar>
-                    </BarChart>
-                </ResponsiveContainer>
+            <div className="md:w-2/3 w-full bg-slate-900/50 rounded-3xl border border-slate-800 p-6 md:p-8">
+                <div className="h-[400px]">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <BarChart
+                            data={sortedSkills}
+                            layout="vertical"
+                            margin={{ top: 10, right: 30, left: 0, bottom: 10 }}
+                        >
+                            <XAxis type="number" hide domain={[0, 100]} />
+                            <YAxis 
+                                dataKey="name" 
+                                type="category" 
+                                width={160}
+                                tick={{ fill: '#94a3b8', fontSize: 13 }} 
+                                axisLine={false}
+                                tickLine={false}
+                                interval={0}
+                            />
+                            <Tooltip content={<CustomTooltip />} cursor={{fill: 'rgba(255,255,255,0.05)'}} />
+                            <Bar dataKey="level" radius={[0, 8, 8, 0]} barSize={28}>
+                                {sortedSkills.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={
+                                        (entry.category === 'Engineering' || entry.category.includes('Engineering')) ? '#3b82f6' : 
+                                        (entry.category === 'AI' || entry.category.includes('AI')) ? '#a855f7' :
+                                        (entry.category === 'Software' || entry.category.includes('Software')) ? '#10b981' :
+                                        '#f59e0b'
+                                    } />
+                                ))}
+                            </Bar>
+                        </BarChart>
+                    </ResponsiveContainer>
+                </div>
             </div>
 
         </div>

@@ -61,7 +61,8 @@ const EXPERIENCE_EN: Experience[] = [
     description: [
       "Developed a Gage R&R analysis program using R to replace Minitab, handling data input, visualization, and PDF reporting.",
       "Implemented a Bayesian Neural Network (BNN) to predict auto-injector injection times, quantifying prediction uncertainty based on drug properties and mechanical parameters."
-    ]
+    ],
+    certificateLink: "/intern.pdf"
   },
   {
     company: "Prof. Hao-Ming Hsiao’s Laboratory",
@@ -231,9 +232,6 @@ const SKILLS_EN: Skill[] = [
   { name: "R Language", level: 50, category: "Software" },
   { name: "Python / AI / ML", level: 85, category: "AI" },
   { name: "Arduino", level: 85, category: "Hardware" },
-  { name: "English", level: 95, category: "Language" },
-  { name: "Chinese", level: 100, category: "Language" },
-  { name: "Malay", level: 90, category: "Language" },
 ];
 
 const SKILLS_ZH: Skill[] = [
@@ -243,9 +241,6 @@ const SKILLS_ZH: Skill[] = [
   { name: "R 語言", level: 50, category: "軟體 (Software)" },
   { name: "Python / AI / ML", level: 85, category: "人工智慧 (AI)" },
   { name: "Arduino", level: 85, category: "硬體 (Hardware)" },
-  { name: "英文", level: 95, category: "語言 (Language)" },
-  { name: "中文", level: 100, category: "語言 (Language)" },
-  { name: "馬來文", level: 90, category: "語言 (Language)" },
 ];
 
 const UI_EN = {

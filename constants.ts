@@ -228,6 +228,8 @@ const PROJECTS_ZH: Project[] = [
 const SKILLS_EN: Skill[] = [
   { name: "Mechanical Design", level: 85, category: "Engineering" },
   { name: "Matlab & Simulink", level: 90, category: "Engineering" },
+  { name: "AutoCAD", level: 90, category: "Engineering" },
+  { name: "SolidWorks / Inventor", level: 80, category: "Engineering" },
   { name: "React / Frontend", level: 50, category: "Software" },
   { name: "R Language", level: 50, category: "Software" },
   { name: "Python / AI / ML", level: 85, category: "AI" },
@@ -237,6 +239,8 @@ const SKILLS_EN: Skill[] = [
 const SKILLS_ZH: Skill[] = [
   { name: "機械設計 (Mechanical Design)", level: 85, category: "工程 (Engineering)" },
   { name: "Matlab & Simulink", level: 90, category: "工程 (Engineering)" },
+  { name: "AutoCAD", level: 90, category: "工程 (Engineering)" },
+  { name: "SolidWorks / Inventor", level: 80, category: "工程 (Engineering)" },
   { name: "React / 前端開發", level: 50, category: "軟體 (Software)" },
   { name: "R 語言", level: 50, category: "軟體 (Software)" },
   { name: "Python / AI / ML", level: 85, category: "人工智慧 (AI)" },
